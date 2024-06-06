@@ -10,7 +10,7 @@ function Topbar() {
         <div className='flex gap-16'>
             <Logo />
             <div className='hidden lg:flex gap-8'>
-                <div className='group relative flex gap-2 items-center text-grey-1 hover:text-dark-1 transition'>
+                <div className='group relative flex gap-2 items-center text-gray-1 hover:text-dark-1 transition'>
                     <span>Features</span>                  
                     <div className='group-hover:rotate-180 transition-all duration-300'>
                         <IconArrowDown />
