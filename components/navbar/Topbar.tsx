@@ -10,9 +10,11 @@ function Topbar() {
         <div className='flex gap-16'>
             <Logo />
             <div className='hidden lg:flex gap-8'>
-                <div className='flex gap-2 items-center'>
+                <div className='group flex gap-2 items-center text-grey-1 hover:text-dark-1 transition cursor-pointer'>
                     <span>Features</span>                  
-                    <IconArrowDown />
+                    <div className='group-hover:rotate-180 transition-all duration-300'>
+                        <IconArrowDown />
+                    </div>
                 </div>
                 <span>Company</span>
                 <span>Careers</span>
