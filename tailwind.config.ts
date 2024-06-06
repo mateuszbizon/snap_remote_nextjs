@@ -8,7 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+      colors: {
+        "light-1": "hsl(0, 0%, 98%)",
+        "grey-1": "hsl(0, 0%, 41%)",
+        "dark-1": "hsl(0, 0%, 8%)",
+      }
     },
   },
   plugins: [],
