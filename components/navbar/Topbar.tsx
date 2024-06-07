@@ -25,7 +25,7 @@ function Topbar({ navbarItems }: Props) {
                                         <IconArrowDown />
                                     </div>
                                     <div className='nav-item-menu group-hover:nav-item-menu-show'>
-                                        <div className='absolute -top-9 left-0 w-full h-9 opacity-0 group-hover:opacity-100'></div>
+                                        <div className='absolute -top-3 left-0 w-full h-3 opacity-0 group-hover:opacity-100'></div>
                                         {item.content}
                                     </div>
                                 </div>
