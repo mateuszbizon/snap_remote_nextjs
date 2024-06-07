@@ -31,7 +31,7 @@ function Topbar({ navbarItems }: Props) {
                                 </div>
                             ) : (
                                 <>
-                                    <Link href={`/${item.link}`}>{item.title}</Link>
+                                    <Link href={`/${item.link}`} className='text-gray-1 hover:text-dark-1 transition'>{item.title}</Link>
                                 </>
                             )}
                         </div>
