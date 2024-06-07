@@ -3,6 +3,7 @@ import IconMenu from '@/public/icons/IconMenu'
 import Logo from '@/public/icons/Logo'
 import Link from 'next/link'
 import React from 'react'
+import FeaturesItems from './FeaturesItems'
 
 function Topbar() {
   return (
@@ -17,13 +18,7 @@ function Topbar() {
                     </div>
                     <div className='nav-item-menu group-hover:nav-item-menu-show'>
                         <div className='absolute -top-9 left-0 w-full h-9 opacity-0 group-hover:opacity-100'></div>
-                        <ul>
-                            <li>tekst1</li>
-                            <li>tekst2</li>
-                            <li>tekst3</li>
-                            <li>tekst4</li>
-                            <li>tekst5</li>
-                        </ul>
+                        <FeaturesItems />
                     </div>
                 </div>
                 <span>Company</span>
