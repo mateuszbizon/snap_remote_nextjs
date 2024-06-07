@@ -11,7 +11,7 @@ type Props = {
 
 function Topbar({ navbarItems }: Props) {
   return (
-    <nav className='flex justify-between px-3 py-5 lg:px-8'>
+    <nav className='flex justify-between px-3 py-5 lg:px-8 items-center'>
         <div className='flex gap-16'>
             <Logo />
             <div className='hidden lg:flex gap-8'>
@@ -41,9 +41,9 @@ function Topbar({ navbarItems }: Props) {
         </div>
 
         <div>
-            <div className='hidden lg:flex gap-4'>
-                <Link href="/login">Login</Link>
-                <Link href="/register">Register</Link>
+            <div className='hidden lg:flex gap-10 items-center'>
+                <Link href="/login" className='text-gray-1 hover:text-dark-1 transition'>Login</Link>
+                <Link href="/register" className='text-gray-1 border-2 border-gray-1 py-2 px-5 rounded-xl hover:text-dark-1 hover:border-dark-1 transition'>Register</Link>
             </div>
             <button className='lg:hidden'>
                 <IconMenu />
