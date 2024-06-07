@@ -3,27 +3,40 @@ import IconMenu from '@/public/icons/IconMenu'
 import Logo from '@/public/icons/Logo'
 import Link from 'next/link'
 import React from 'react'
-import FeaturesItems from './FeaturesItems'
+import { NavbarItem } from '@/types'
 
-function Topbar() {
+type Props = {
+    navbarItems: NavbarItem[];
+}
+
+function Topbar({ navbarItems }: Props) {
   return (
     <nav className='flex justify-between px-3 py-5 lg:px-8'>
         <div className='flex gap-16'>
             <Logo />
             <div className='hidden lg:flex gap-8'>
-                <div className='group relative flex gap-2 items-center text-gray-1 hover:text-dark-1 transition'>
-                    <span>Features</span>                  
-                    <div className='group-hover:rotate-180 transition-all duration-300'>
-                        <IconArrowDown />
-                    </div>
-                    <div className='nav-item-menu group-hover:nav-item-menu-show'>
-                        <div className='absolute -top-9 left-0 w-full h-9 opacity-0 group-hover:opacity-100'></div>
-                        <FeaturesItems />
-                    </div>
-                </div>
-                <span>Company</span>
-                <span>Careers</span>
-                <span>About</span>
+                {navbarItems.map((item) => {
+                    return (
+                        <div key={item.title}>
+                            {item.isDropdown ? (
+                                <div className='group relative flex gap-2 items-center text-gray-1 hover:text-dark-1 transition'>
+                                    <span>{item.title}</span>                  
+                                    <div className='group-hover:rotate-180 transition-all duration-300'>
+                                        <IconArrowDown />
+                                    </div>
+                                    <div className='nav-item-menu group-hover:nav-item-menu-show'>
+                                        <div className='absolute -top-9 left-0 w-full h-9 opacity-0 group-hover:opacity-100'></div>
+                                        {item.content}
+                                    </div>
+                                </div>
+                            ) : (
+                                <>
+                                    <Link href={`/${item.link}`}>{item.title}</Link>
+                                </>
+                            )}
+                        </div>
+                    )
+                })}
             </div>
         </div>
 
