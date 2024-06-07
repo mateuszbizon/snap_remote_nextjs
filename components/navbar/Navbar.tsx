@@ -2,6 +2,7 @@ import React from 'react'
 import Topbar from './Topbar'
 import FeaturesItems from './FeaturesItems'
 import { NavbarItem } from '@/types'
+import Sidebar from './Sidebar'
 
 const NAVBAR_ITEMS: NavbarItem[] = [
   { title: "Features", isDropdown: true, content: <FeaturesItems /> },
@@ -14,6 +15,7 @@ function Navbar() {
   return (
     <>
         <Topbar navbarItems={NAVBAR_ITEMS} />
+        <Sidebar />
     </>
   )
 }
