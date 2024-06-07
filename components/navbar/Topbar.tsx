@@ -19,7 +19,7 @@ function Topbar({ navbarItems }: Props) {
                     return (
                         <div key={item.title}>
                             {item.isDropdown ? (
-                                <div className='group relative flex gap-2 items-center text-gray-1 hover:text-dark-1 transition'>
+                                <div className='group relative flex gap-2 items-center link-1'>
                                     <span>{item.title}</span>                  
                                     <div className='group-hover:rotate-180 transition-all duration-300'>
                                         <IconArrowDown />
@@ -31,7 +31,7 @@ function Topbar({ navbarItems }: Props) {
                                 </div>
                             ) : (
                                 <>
-                                    <Link href={`/${item.link}`} className='text-gray-1 hover:text-dark-1 transition'>{item.title}</Link>
+                                    <Link href={`/${item.link}`} className='link-1'>{item.title}</Link>
                                 </>
                             )}
                         </div>
@@ -42,8 +42,8 @@ function Topbar({ navbarItems }: Props) {
 
         <div>
             <div className='hidden lg:flex gap-10 items-center'>
-                <Link href="/login" className='text-gray-1 hover:text-dark-1 transition'>Login</Link>
-                <Link href="/register" className='text-gray-1 border-2 border-gray-1 py-2 px-5 rounded-xl hover:text-dark-1 hover:border-dark-1 transition'>Register</Link>
+                <Link href="/login" className='link-1'>Login</Link>
+                <Link href="/register" className='btn-outline-1'>Register</Link>
             </div>
             <button className='lg:hidden'>
                 <IconMenu />

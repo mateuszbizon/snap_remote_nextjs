@@ -10,4 +10,12 @@
     .nav-item-menu-show {
         @apply opacity-100 pointer-events-auto
     }
+
+    .link-1 {
+        @apply text-gray-1 hover:text-dark-1 transition
+    }
+
+    .btn-outline-1 {
+        @apply text-gray-1 border-2 border-gray-1 py-2 px-5 rounded-xl hover:text-dark-1 hover:border-dark-1 transition
+    }
 }
