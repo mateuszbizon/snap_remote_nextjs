@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <>
         <Topbar navbarItems={NAVBAR_ITEMS} />
-        <Sidebar />
+        <Sidebar navbarItems={NAVBAR_ITEMS} />
     </>
   )
 }
