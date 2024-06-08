@@ -1,6 +1,8 @@
+"use client"
+
 import IconArrowDown from '@/public/icons/IconArrowDown'
 import IconsClose from '@/public/icons/IconsClose'
-import React from 'react'
+import React, { useState } from 'react'
 import FeaturesItems from './FeaturesItems'
 import Link from 'next/link'
 import { NavbarItem } from '@/types'
@@ -10,6 +12,19 @@ type Props = {
 }
 
 function Sidebar({ navbarItems }: Props) {
+    const [activeItems, setActiveItems] = useState<number[]>([])
+
+    function handleSetActiveItems(itemIndex: number) {
+        if (activeItems.includes(itemIndex)) {
+            const filteredArray = activeItems.filter(item => item !== itemIndex);
+
+            setActiveItems([...filteredArray])
+            return;
+        }
+
+        setActiveItems(prev => [...prev, itemIndex])
+    }
+
   return (
     <aside className='lg:hidden fixed flex flex-col gap-9 top-0 right-0 w-[250px] h-full bg-white p-5 z-20'>
         <div className='flex justify-end'>
@@ -19,18 +34,18 @@ function Sidebar({ navbarItems }: Props) {
         </div>
 
         <div className='flex flex-col gap-4'>
-            {navbarItems.map((item) => {
+            {navbarItems.map((item, index) => {
                 return (
                     <div key={item.title}>
                         {item.isDropdown ? (
                             <div className='flex flex-col'>
-                                <button className='flex gap-2 items-center link-1'>
+                                <button className='flex gap-2 items-center link-1' onClick={() => handleSetActiveItems(index)}>
                                     <span>{item.title}</span>
                                     <div>
                                         <IconArrowDown />
                                     </div>
                                 </button>
-                                <div className='h-0 overflow-hidden px-5 transition-all duration-300'>
+                                <div className={`${activeItems.includes(index) ? "max-h-[500px] mt-5" : "max-h-0"} overflow-hidden px-5 transition-all duration-300`}>
                                     {item.content}
                                 </div>
                             </div>
