@@ -2,16 +2,17 @@
 
 import IconArrowDown from '@/public/icons/IconArrowDown'
 import IconsClose from '@/public/icons/IconsClose'
-import React, { useState } from 'react'
-import FeaturesItems from './FeaturesItems'
+import React, { Dispatch, SetStateAction, useState } from 'react'
 import Link from 'next/link'
 import { NavbarItem } from '@/types'
 
 type Props = {
     navbarItems: NavbarItem[];
+    sidebarOpen: boolean;
+    setSidebarOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-function Sidebar({ navbarItems }: Props) {
+function Sidebar({ navbarItems, sidebarOpen, setSidebarOpen }: Props) {
     const [activeItems, setActiveItems] = useState<number[]>([])
 
     function handleSetActiveItems(itemIndex: number) {
@@ -26,9 +27,9 @@ function Sidebar({ navbarItems }: Props) {
     }
 
   return (
-    <aside className='lg:hidden fixed flex flex-col gap-9 top-0 right-0 w-[250px] h-full bg-white p-5 z-20'>
+    <aside className={`lg:hidden fixed flex flex-col gap-9 top-0 right-0 ${sidebarOpen ? "translate-x-0" : "translate-x-full"} w-[250px] h-full bg-white p-5 z-20 transition-all duration-300`}>
         <div className='flex justify-end'>
-            <button>
+            <button onClick={() => setSidebarOpen(prev => !prev)}>
                 <IconsClose />
             </button>
         </div>

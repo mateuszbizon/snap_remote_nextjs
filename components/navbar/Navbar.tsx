@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import Topbar from './Topbar'
 import FeaturesItems from './FeaturesItems'
 import { NavbarItem } from '@/types'
@@ -12,10 +14,12 @@ const NAVBAR_ITEMS: NavbarItem[] = [
 ]
 
 function Navbar() {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+
   return (
     <>
-        <Topbar navbarItems={NAVBAR_ITEMS} />
-        <Sidebar navbarItems={NAVBAR_ITEMS} />
+        <Topbar navbarItems={NAVBAR_ITEMS} setSidebarOpen={setSidebarOpen} />
+        <Sidebar navbarItems={NAVBAR_ITEMS} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
     </>
   )
 }

@@ -1,15 +1,18 @@
+"use client"
+
 import IconArrowDown from '@/public/icons/IconArrowDown'
 import IconMenu from '@/public/icons/IconMenu'
 import Logo from '@/public/icons/Logo'
 import Link from 'next/link'
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { NavbarItem } from '@/types'
 
 type Props = {
     navbarItems: NavbarItem[];
+    setSidebarOpen: Dispatch<SetStateAction<boolean>>
 }
 
-function Topbar({ navbarItems }: Props) {
+function Topbar({ navbarItems, setSidebarOpen }: Props) {
   return (
     <nav className='flex justify-between px-3 py-5 lg:px-8 items-center'>
         <div className='flex gap-16'>
@@ -45,7 +48,7 @@ function Topbar({ navbarItems }: Props) {
                 <Link href="/login" className='link-1'>Login</Link>
                 <Link href="/register" className='btn-outline-1'>Register</Link>
             </div>
-            <button className='lg:hidden'>
+            <button className='lg:hidden' onClick={() => setSidebarOpen(prev => !prev)}>
                 <IconMenu />
             </button>
         </div>
