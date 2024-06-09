@@ -5,6 +5,7 @@ import Topbar from './Topbar'
 import FeaturesItems from './FeaturesItems'
 import { NavbarItem } from '@/types'
 import Sidebar from './Sidebar'
+import Shadow from '../Shadow'
 
 const NAVBAR_ITEMS: NavbarItem[] = [
   { title: "Features", isDropdown: true, content: <FeaturesItems /> },
@@ -20,6 +21,7 @@ function Navbar() {
     <>
         <Topbar navbarItems={NAVBAR_ITEMS} setSidebarOpen={setSidebarOpen} />
         <Sidebar navbarItems={NAVBAR_ITEMS} sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <Shadow shadowOpen={sidebarOpen} closeShadow={setSidebarOpen} />
     </>
   )
 }
