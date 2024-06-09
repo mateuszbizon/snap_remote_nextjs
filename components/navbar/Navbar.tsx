@@ -6,10 +6,11 @@ import FeaturesItems from './FeaturesItems'
 import { NavbarItem } from '@/types'
 import Sidebar from './Sidebar'
 import Shadow from '../Shadow'
+import CompanyItems from './CompanyItems'
 
 const NAVBAR_ITEMS: NavbarItem[] = [
   { title: "Features", isDropdown: true, content: <FeaturesItems /> },
-  { title: "Company", isDropdown: true, content: <FeaturesItems /> },
+  { title: "Company", isDropdown: true, content: <CompanyItems /> },
   { title: "Careers", isDropdown: false, link: "careers" },
   { title: "About", isDropdown: false, link: "about" },
 ]
