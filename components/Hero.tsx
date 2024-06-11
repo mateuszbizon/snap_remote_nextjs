@@ -26,7 +26,7 @@ function Hero() {
                 <h1 className='text-4xl lg:text-7xl text-center lg:text-left font-bold'>Make remote work</h1>
                 <p className='text-center lg:text-left lg:text-lg text-gray-1'>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
                 <div className='flex justify-center lg:justify-start'>
-                    <Link href={"#"} className='btn-outline-1'>
+                    <Link href={"#"} className='btn-1'>
                         Learn more
                     </Link>
                 </div>
