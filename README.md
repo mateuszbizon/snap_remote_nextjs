@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Intro section with dropdown navigation solution
 
-## Getting Started
+This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
+- View the optimal layout for the content depending on their device's screen size
+- See hover states for all interactive elements on the page
+
+### Screenshot
+
+![Snap Remote](./public/screenshot_app.png)
+
+### Links
+
+- Live Site URL: [https://snapremotenextjs.netlify.app/](https://snapremotenextjs.netlify.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- Flexbox
+- TailwindCSS
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+
+### What I learned
+
+In this project I had problem to scale icons using svgs tags in hero section. I was using them like they were provided. To solve this problem I have added viewBox attribute to svg element like this:
+
+```html
+    <svg className='w-full h-auto' width="114" height="20" viewBox='0 0 114 20' xmlns="http://www.w3.org/2000/svg">
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Without viewBox property it doesn't work even there was set width to match full size
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Useful resources
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [How to scale svgs](https://www.youtube.com/watch?v=Clv_YhMWoFk) - this helped to properly scale svg tags. This is superb video that explains how to scale svg to parent element but also how viewBox attribute works.
 
-## Learn More
+## Author
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Website - [Mateusz Bizoń](https://portfoliomateuszbizon.netlify.app/)
+- Frontend Mentor - [@mateuszbizon](https://www.frontendmentor.io/profile/mateuszbizon)
